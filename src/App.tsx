@@ -1,11 +1,15 @@
 import { MyButton } from "./button";
 import { MuiButton } from "./Components/Atoms/Button";
-import { ButtonProps } from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { theme } from "./theme";
-import { ThemeProvider } from "@mui/material";
-import { Button, Stack, Typography, TypographyProps } from "@mui/material";
-import { red } from "@mui/material/colors";
+import {
+  Button,
+  Stack,
+  Typography,
+  TypographyProps,
+  ButtonProps,
+  ThemeProvider,
+} from "@mui/material";
 import { MuiTypography } from "./Components/Atoms/Typography";
 import { Icon } from "./Components/Atoms/Icon";
 import Profile from "../public/Assets/Profile.svg";
@@ -14,13 +18,13 @@ import { MuiAvatar } from "./Components/Atoms/Avatar";
 const MuiButton2 = styled(MuiButton)<ButtonProps>(({ theme }) => ({
   width: "512px",
   height: "42px",
-  backgroundColor: theme.palette.primary[500],
+  backgroundColor: theme.palette.primary.error100,
   ".MuiButton": {
     "&hover": {
-      boxShadow: `0px 0px 0px 8px ${theme.palette.primary[500]}`,
+      boxShadow: `0px 0px 0px 8px ${theme.palette.primary.error100}`,
     },
     ".Mui-disabled": {
-      backgroundColor: theme.palette.primary[900],
+      backgroundColor: theme.palette.primary.grey100,
     },
   },
   color: "white",
@@ -28,7 +32,7 @@ const MuiButton2 = styled(MuiButton)<ButtonProps>(({ theme }) => ({
   padding: " 0px, 16px, 0px, 16px",
 }));
 const Typo = styled(Typography)<TypographyProps>(({ theme }) => ({
-  color: theme.palette.primary[500],
+  color: theme.palette.primary.grey300,
 }));
 
 export const App = () => {
@@ -59,7 +63,7 @@ export const App = () => {
       <MuiButton variant="contained" sx={ButtonStyled}>
         Click me
       </MuiButton>
-      <MuiTypography variant="h4">My name is harshitha</MuiTypography>
+      <MuiTypography variant="heading4">My name is harshitha</MuiTypography>
       <MuiButton variant="contained">
         <MuiTypography>Button for the component</MuiTypography>
       </MuiButton>

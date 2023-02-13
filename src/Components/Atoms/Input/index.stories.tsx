@@ -1,31 +1,36 @@
+import Input from "./index";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Input } from "./index";
-import React from "react";
+import SearchIcon from '@mui/icons-material/Search';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 export default {
   title: "Input",
   component: Input,
   argTypes: {
     variant: {
-      control: {
-        type: "radio",
-      },
-      options: ["outlined", "filled", "standard"],
-    },
-    size: {
       control: { type: "radio" },
-      options: ["small", "medium"],
+      options: ["outlined", "standard", "filled"],
     },
     color: {
-      type: { type: "select" },
-      options: ["primary", "secondary", "success", "error", "info", "warning"],
+      control: { type: "select" },
+      options: ["primary", "error", "secondary", "info", "success", "warning"],
     },
   },
-};
+} as ComponentMeta<typeof Input>;
+
 const template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
-export const Inputs = template.bind({});
-Inputs.args = {
-  label: "Reset Password",
+
+export const outlined = template.bind({});
+export const primary = template.bind({});
+primary.args = {
+  variant: "outlined",
+  label: "email",
   color: "primary",
-  sx: { width: "100px", height: "100px" },
-  focused: false,
+  icon:<SearchIcon />
+};
+export const secondary = template.bind({});
+secondary.args = {
+  variant: "outlined",
+  label: "email",
+  color: "primary",
+  icon:<VisibilityIcon />
 };

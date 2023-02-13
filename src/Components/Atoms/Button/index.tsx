@@ -1,13 +1,12 @@
 import { Button, ButtonProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-// import { theme } from "./theme";
 const MuiButton2 = styled(Button)<ButtonProps>(({ theme }) => ({
   width: "512px",
   height: "42px",
-  backgroundColor: theme.palette.primary[500],
+  backgroundColor: theme.palette.primary.error100,
   ".MuiButton": {
     "&hover": {
-      boxShadow: `0px 0px 0px 8px ${theme.palette.primary[500]}`,
+      boxShadow: `0px 0px 0px 8px ${theme.palette.primary.error500}`,
     },
   },
   "&.Mui-disabled": {

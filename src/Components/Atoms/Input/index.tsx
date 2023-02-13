@@ -1,28 +1,36 @@
-import { TextFieldProps, TextField } from "@mui/material";
-import { width } from "@mui/system";
-// interface InputProps  {
-//   size?: "small" | "medium" | undefined;
-//   label?: string;
-//   variant?: "outlined" | "filled" | "standard";
-//   color:
-//     | "primary"
-//     | "secondary"
-//     | "success"
-//     | "error"
-//     | "info"
-//     | "warning"
-//     | undefined;
-//     ...TextFieldProps
+import React from "react";
+import { TextField, InputAdornment } from "@mui/material";
+interface InputProps {
+  variant?: "outlined" | "standard" | "filled";
+  label?: string;
+  color?: "primary" | "error" | "secondary" | "info" | "success" | "warning";
+  helperText?: string;
+  icon?:JSX.Element;
+}
 
-// }
-export const Input = (props: TextFieldProps) => {
+const Input: React.FC<InputProps> = (props) => {
+  const {
+    variant = "outlined",
+    label = "email",
+    color = "primary",
+    helperText
+  } = props;
   return (
     <TextField
-      // size={props.size}
-      // placeholder={props.label}
-      // variant={props.variant}
-      // color={props.color}
+      variant={variant}
+      label={label}
+      color={color}
+      helperText={helperText}
+      InputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+           {props.icon}
+          </InputAdornment>
+        ),
+      }}
       {...props}
-    />
+    ></TextField>
   );
 };
+
+export default Input;
