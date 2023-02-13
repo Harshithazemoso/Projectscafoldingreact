@@ -1,4 +1,3 @@
-import { MyButton } from "./button";
 import { MuiButton } from "./Components/Atoms/Button";
 import { styled } from "@mui/material/styles";
 import { theme } from "./theme";
