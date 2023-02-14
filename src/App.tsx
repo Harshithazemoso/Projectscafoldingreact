@@ -1,6 +1,7 @@
 import { MuiButton } from "./Components/Atoms/Button";
 import { styled } from "@mui/material/styles";
 import { theme } from "./theme";
+import "./App.css";
 import {
   Button,
   Stack,
@@ -76,6 +77,13 @@ export const App = () => {
       <Button variant="contained" color="primary">
         Harshitha
       </Button>
+      <MuiButton
+        variant="contained"
+        color="primary"
+        sx={{ width: "102px", height: "42px" }}
+      >
+        sell
+      </MuiButton>
     </ThemeProvider>
   );
 };
